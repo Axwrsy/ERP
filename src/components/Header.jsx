@@ -1,4 +1,4 @@
-import Logo from '../assets/LogoProjeto.png'
+import Logo from '../assets/LogoCerto.png'
 //qnd importa a logo aq em cima so precisa chamar em baixo 
 
 function Header(){

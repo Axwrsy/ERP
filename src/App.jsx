@@ -1,17 +1,38 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
-import Header from './components/header';
+//import Grafico from './components/Grafico'
+
+
+import Login from './components/Login'
 import './components/css/Header.css'
+// import './components/css/Grafico.css'
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/header'
 
 
 function App(){
   return(
-    <div>
-    <Header/>
+    <div className='app'>
+        <Router>
+        <Routes>
+          {/* essa rota vai mostrar o componente Login quando eu estiver na url "/" */}
+          <Route path="/" element={<Login />} />
+
+          {/* essa rota vai mostrar o componente Home quando  for pra "/home" */}
+          <Route path='/home' element={<Header/>} />
+
+          {/* <Grafico/> */}
+        </Routes>
+      </Router>
     </div>
+
+
+
+
+
+
+ 
   )
 }
 
