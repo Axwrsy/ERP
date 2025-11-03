@@ -80,12 +80,9 @@ npm run dev
 Acesse geralmente em http://localhost:5173
 
 
-Estrutura da Tabela
 
 
-ColunaTipoDescriçãoidSERIALChave primária auto-incrementonomeVARCHAR(100)Nome do itemquantidadeINTEGERQuantidade em estoqueprecoDECIMAL(10,2)Preço unitário
-
-Solução de Problemas Comuns
+-Solução de Problemas Comuns
 Erro no .env ou conexão com o banco
 
 Verifique se o PostgreSQL está rodando:
