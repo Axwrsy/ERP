@@ -1,0 +1,96 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  body{
+    background-color: #ebebeb;
+  }
+  
+  /*mandar graficos p canto*/
+  .sidebar {
+   margin-right: 5px;
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    width: 1300px;
+    gap: 15px;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .icon-button {
+    background: none;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+  
+  .icon-button:hover {
+    background: #f0f0f0;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 5px 10px;
+    flex: 1; /* ocupa o espaço disponível */
+    max-width: 500px;
+    background: #fafafa;
+  }
+  
+  .search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    background: transparent;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  
+  .main-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  /*graficos de cima*/
+  .chart-row {
+    display: flex;
+    gap: 20px;
+    height: 220px;
+  }
+  
+  .chart-box {
+    background: #d4d4d6;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .full-width {
+    width: 100%;
+  }

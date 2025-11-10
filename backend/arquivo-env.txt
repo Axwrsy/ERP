@@ -1,0 +1,8 @@
+-- RENOMEIE ESSE ARQUIVO PARA .env e coloque com base nas suas infos
+
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=estoque_erp
+DB_PASSWORD=postgres
+DB_PORT=5432
+

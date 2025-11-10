@@ -1,0 +1,126 @@
+:root {
+    --default-font: "Playfair Display", serif;
+    --heading-font: "Raleway", sans-serif;
+    --btn-color: #1a2b49;
+    --btn-hover-color: #1e224d; 
+}
+
+/*--------------------------------------------------------------
+# Estilos gerais
+--------------------------------------------------------------*/
+body {
+    margin: 0;
+    font-family: var(--default-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* LAYOUT PRINCIPAL */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 80px;
+    gap: 40px;
+}
+
+/* TEXTO À ESQUERDA */
+.text-content {
+    flex: 1;
+}
+
+.text-content h2 {
+    font-family: var(--heading-font);  
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.btn-get-started {
+    background-color: var(--btn-color);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-get-started:hover {
+    background-color: var(--btn-hover-color);
+    transform: translateY(-2px);
+}
+
+/* CAIXA DE LOGIN À DIREITA */
+.container {
+    margin: 300px;
+    display: flex;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 710px;
+}
+
+.signup {
+    padding: 40px;
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signin-img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.signin-btn {
+    margin-top: 20px;
+}
+
+button {
+    background-color: var(--btn-color);
+    color: #fff;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.05);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-btn {
+    background-color: var(--btn-color);
+    width: 100%;
+}
