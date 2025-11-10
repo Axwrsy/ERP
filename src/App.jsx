@@ -1,26 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// app.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Overview from './components/Overview';
+import GraficoVisao from './components/graficoVisao';
+import Configuracoes from './components/Configuracoes';
+import DashboardLayout from './components/DashboardLayout';
+import EntradaNF from './components/EntradaNf';
+import CadastroNF from './components/CadastroNF';
 
-import Header from './components/header';
-import './components/css/Header.css'
+
+import './components/css/Header.css';
+import './components/css/Grafico.css';
 
 
+function App() {
+  return (
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
 
-function App(){
-  return(
-    <div>
-    <Header/>
+          {/* Todas as rotas com Header */}
+          <Route element={<DashboardLayout />}>
+            <Route path="/home" element={<div>Bem-vindo!</div>} />
+            <Route path="/estoque" element={<Overview />} />
+            <Route path="/grafico" element={<GraficoVisao />} />
+            <Route path="/configuracoes" element={<Configuracoes />} />
+            <Route path="/cadastro-nf" element={<CadastroNF />} />
+            <Route path="/entrada-nf" element={<EntradaNF />} />
+          </Route>
+        </Routes>
+      </Router>
     </div>
-  )
+  );
 }
-
-
-
-
-
-
-
-
 
 export default App;
