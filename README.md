@@ -7,13 +7,13 @@ Desenvolvido com **Node.js**, **Express**, **PostgreSQL** e **React (Vite)**.
 
 ## Funcionalidades Atuais
 
-| Módulo | Status | Descrição |
+| Módulo | Descrição | Status |
 |-------|--------|-----------|
-| **Cadastro de NF** | Usuário cadastra NF|
-| **Busca de NF por número** | Digita o número da NF e consegue visualizar detalhes e adcionar ao estoque |
-| **Dar entrada no estoque** | O estoque é atualizado automaticamente com base nos itens da NF |
-| **Controle de estoque** | Adiciona ou incrementa quantidade por código de barras usando o leitor de código de barras|
-| **Scan de produtos (venda)** | Simula leitura de código de barras (+1 na quantidade se escanear o mesmo produto 2 vezes) |
+| **Cadastro de NF** | Usuário cadastra NF| OK |
+| **Busca de NF por número** | Digita o número da NF e consegue visualizar detalhes e adcionar ao estoque | OK |
+| **Dar entrada no estoque** | O estoque é atualizado automaticamente com base nos itens da NF | OK |
+| **Controle de estoque** | Adiciona ou incrementa quantidade por código de barras usando o leitor de código de barras| OK |
+| **Scan de produtos (venda)** | Simula leitura de código de barras (+1 na quantidade se escanear o mesmo produto 2 vezes) | OK |
 
 ---
 
