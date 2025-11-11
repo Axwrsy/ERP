@@ -1,114 +1,105 @@
-# Projeto Estoque ERP
+# ERP One – Sistema de Controle de Estoque e Entrada de Mercadorias
 
-Projeto simples de controle de estoque com **backend em Node.js (Express)** e **frontend em React (Vite)**, utilizando **PostgreSQL** como banco de dados.
+Um ERP simples, funcional e escalável para controle de estoque com entrada de mercadorias via **Nota Fiscal (NF)**.  
+Desenvolvido com **Node.js**, **Express**, **PostgreSQL** e **React (Vite)**.
+
+---
+
+## Funcionalidades Atuais
+
+| Módulo | Descrição | Status |
+|-------|--------|-----------|
+| **Cadastro de NF** | Usuário cadastra NF| OK |
+| **Busca de NF por número** | Digita o número da NF e consegue visualizar detalhes e adcionar ao estoque | OK |
+| **Dar entrada no estoque** | O estoque é atualizado automaticamente com base nos itens da NF | OK |
+| **Controle de estoque** | Adiciona ou incrementa quantidade por código de barras usando o leitor de código de barras| OK |
+| **Scan de produtos (venda)** | Simula leitura de código de barras (+1 na quantidade se escanear o mesmo produto 2 vezes) | OK |
+
+---
+
+## Tecnologias Utilizadas
+
+### Backend
+- **Node.js** + **Express**
+- **PostgreSQL** (via `pg`)
+- **CORS** habilitado
+
+### Frontend
+- **React** + **Vite**
+- **JavaScript (sem TypeScript)**
+- **CSS puro** (sem frameworks)
 
 ---
 
 ## Estrutura do Projeto
-projeto-estoque/
 ├── backend/
-│   ├── app.js
-│   ├── .env
-│   └── ...
-├── frontend/
-│   └── ...
-└── README.md
-text---
+│   ├── app.js          ← Servidor principal
+│   └── db.js           ← Configuração do PostgreSQL
+├── src/
+│   ├── components/
+│   │   ├── CadastroNF.jsx
+│   │   ├── EntradaNF.jsx
+│   │   └── Estoque.jsx
+│   └── App.jsx
+├── public/
+└── package.json
 
-## Pré-requisitos
+## Como Rodar o Projeto
 
-- [Node.js](https://nodejs.org/) (v16 ou superior)
-- [PostgreSQL](https://www.postgresql.org/) instalado e em execução
-- [psql](https://www.postgresql.org/docs/current/app-psql.html) (cliente de linha de comando do PostgreSQL)
+### 1. Pré-requisitos
+
+- **Node.js** (v18 ou superior)
+- **PostgreSQL** (local ou remoto)
+- **pgAdmin** (opcional, para gerenciar o banco)
 
 ---
 
-## Configuração do Banco de Dados
+### 2. Clone o repositório
 
-### 1. Criar o banco de dados
+```bash
+git clone https://github.com/seu-usuario/erp-one.git
+cd erp-one
 
-```sql
-CREATE DATABASE estoque_erp;
-2. Conectar ao banco e criar a tabela
-sql\c estoque_erp
-
-CREATE TABLE itens_estoque (
-  id SERIAL PRIMARY KEY,
-  nome VARCHAR(100) NOT NULL,
-  quantidade INTEGER NOT NULL,
-  preco DECIMAL(10, 2)
-);
-3. Verificar a tabela
-sqlSELECT * FROM itens_estoque;
-
-Backend - Configuração
-1. Criar pasta do backend
-bashmkdir backend
+3. Instale as dependências
+--BackEnd
 cd backend
-2. Inicializar projeto Node.js
-bashnpm init -y
-3. Instalar dependências
-bashnpm install express pg cors dotenv
-4. Criar arquivo .env
+npm install
 
-Atenção: Este arquivo não deve ser versionado no Git.
-
-envDB_HOST=localhost
-DB_PORT=5432
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-DB_NAME=estoque_erp
-PORT=5000
-
-Dica: Se estiver com erro de conexão, acesse o psql e verifique/insira manualmente as credenciais:
-bashpsql -U seu_usuario -d postgres
-Depois preencha corretamente o .env.
+--FrontEnd
+cd ..
+npm install
 
 
-Executar o Projeto
-1. Backend
-bashcd backend
+4. Configure o Banco de Dados
+backend/db.js
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'seu_usuario',
+  host: 'localhost',
+  database: 'estoque_erp',
+  password: 'sua_senha',
+  port: 5432,
+});
+
+module.exports = pool;
+
+5. Crie as Tabelas no PostgreSQL
+
+
+6. Inicie os servidores
+cd backend
 node app.js
 
-O servidor estará rodando em http://localhost:5000
+src --> npm run dev
 
 
-2. Frontend
-bashcd frontend
-npm run dev
 
-Acesse geralmente em http://localhost:5173
+Melhorias Futuras (Frontend)
+O frontend está funcional, mas ainda precisa de melhorias:
 
-
-Estrutura da Tabela
-
-
-ColunaTipoDescriçãoidSERIALChave primária auto-incrementonomeVARCHAR(100)Nome do itemquantidadeINTEGERQuantidade em estoqueprecoDECIMAL(10,2)Preço unitário
-
-Solução de Problemas Comuns
-Erro no .env ou conexão com o banco
-
-Verifique se o PostgreSQL está rodando:
-bashsudo service postgresql status
-
-Acesse o psql e teste a conexão:
-bashpsql -U seu_usuario -d estoque_erp
-
-Confirme que o .env está na raiz do backend/ e com os dados corretos.
-
-
-Comandos Úteis
-bash# Ver tabelas no banco
-\dt
-
-# Listar bancos
-\l
-
-# Ver estrutura da tabela
-\d itens_estoque
-
-Tecnologias Utilizadas
-
-Backend: Node.js, Express, PostgreSQL
-Frontend: React + Vite
-Ferramentas: dotenv, cors, pg
+ -Melhorias no UX/UI
+ -Validação robusta de formulários
+ -Responsividade para tablets e celulares
+ -Feedback visual (loading, sucesso, erro)
+ -Histórico das notas fiscais cadastradas
